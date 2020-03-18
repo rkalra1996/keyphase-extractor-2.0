@@ -1,0 +1,9 @@
+POST http://localhost:5000/analyze/phrases
+content-type: application/json
+
+{
+    "data": [
+        "No source of irrigation,  If source is there insufficiency of irrigation are the constraints. Depleting ground water tables is another concern. NGOs government should make farmers aware of  replenishing the groundwater. Farmers should aware of saving water. there are many technologies available in saving technologies. Another important thing in Irrigation is farmers should aware of critical periods of crop irrigation. Extension personnel should concentrate on making farmers understand the importance of critical periods of crop irrigation.",
+        "In rural areas, the availability of hospitals and docters are very less. So people are not getting treatment when they need. In most of the time, medicines are not available in Government hospitals. If it is there also, it is selling for higher price. Government doctors are not ready to treat properly.  Treatments are costly for farmers here. so forced to take self treatment. Farmers are getting breathing issues, high asthma due to dust."
+]
+}
