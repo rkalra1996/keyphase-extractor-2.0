@@ -13,6 +13,7 @@ import json
 
 # input_loc = sys.argv[1]
 # output_loc = sys.argv[2]
+# stop_word_loc = sys.argv[3]
 stop_word_loc = './stopwords.txt'
 
 ### Extract keyphrase for a sentence ###
@@ -37,11 +38,10 @@ def keyphrase_sentence(sentence):
             if len(token_ls)>=3:
                 return " ".join(token_ls) 
 
+### Extract keyphrase for a text ###
 def keyphrase_text(text):
     
     phrase_ls = [ keyphrase_sentence(i) for i in text.split(". ") ] # extract keyphrases for each sentence in a text
-    phrase_ls = [i for i in phrase_ls if i!= None]
-
     ls = {} 
     ls["Text"] = text
     ls["keyPhraseResults"] =[]
@@ -65,9 +65,9 @@ with open(stop_word_loc) as f:                             # read stopword list
 results = {} 
 results = {"output":[]}   
 for i in range(len(df)): 
-    print(i)
-    data= keyphrase_text(df["Text"][i]) 
-    results["output"].append(data)
+    data= keyphrase_text(df["Text"][i])
+    results["output"].append(data) 
+
 with open(output_loc, 'w') as f:
     json.dump(results, f)
  """
