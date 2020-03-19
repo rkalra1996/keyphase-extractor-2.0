@@ -18,6 +18,11 @@ def requestHandler():
     response = results
     return response
 
+@app.route("/health", methods=["GET"])
+def healthResponse():
+    print("health api hit from " + request.remote_addr);
+    return jsonify({"status": 200, "server": "up"})
+
 if __name__ == '__main__':
 	app.debug = True
 	app.run(host='0.0.0.0')    
